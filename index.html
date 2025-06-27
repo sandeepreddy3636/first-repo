@@ -22,24 +22,61 @@
       font-size: 1.2rem;
       color: #555;
     }
-    .info {
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: #888;
+    .locations {
+      margin-top: 1.5rem;
+      font-size: 1rem;
+      color: #444;
+      text-align: left;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
     }
   </style>
 </head>
 <body>
   <h1>Welcome to sandeepmaddi.com!</h1>
-  <p>This is a simple dashboard placeholder to track your website hits and traffic origins.</p>
+  <p>This dashboard shows recent visitor statistics and traffic origins.</p>
 
   <div class="counter">
-    Visitors in last 24 hours: <strong>--</strong>
+    Visitors in last 24 hours: <strong id="visitor-count">--</strong>
   </div>
 
-  <div class="info">
-    Traffic is being monitored using Cloudflare analytics.<br/>
-    You can see detailed traffic reports in your Cloudflare dashboard.
+  <div class="locations">
+    <h3>Top Traffic Countries / Regions</h3>
+    <ul id="country-list">
+      <li>Loading data...</li>
+    </ul>
   </div>
+
+  <script>
+    // Example placeholder data — replace this with actual API fetch logic
+    const visitorData = {
+      count: 4375,
+      countries: [
+        { name: "United States", hits: 4310 },
+        { name: "Ireland", hits: 765 },
+        { name: "China", hits: 65 },
+        { name: "Hong Kong", hits: 36 },
+        { name: "Germany", hits: 27 },
+      ]
+    };
+
+    // Function to render visitor count and countries
+    function renderVisitorStats(data) {
+      document.getElementById('visitor-count').textContent = data.count;
+
+      const list = document.getElementById('country-list');
+      list.innerHTML = ''; // Clear loading text
+
+      data.countries.forEach(({ name, hits }) => {
+        const li = document.createElement('li');
+        li.textContent = `${name}: ${hits.toLocaleString()}`;
+        list.appendChild(li);
+      });
+    }
+
+    // Simulate API call delay
+    setTimeout(() => renderVisitorStats(visitorData), 500);
+  </script>
 </body>
 </html>
