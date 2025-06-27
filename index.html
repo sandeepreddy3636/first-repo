@@ -32,17 +32,24 @@
 
   <script>
     async function fetchIPAndLocation() {
+      const fallbackMsg = "Unable to determine location (possibly using VPN)";
       try {
         const response = await fetch('https://ipapi.co/json/');
-        if (!response.ok) throw new Error('Network response was not ok');
+        if (!response.ok) throw new Error('API error');
         const data = await response.json();
+
         const ip = data.ip || 'N/A';
-        const city = data.city || 'Unknown city';
-        const country = data.country_name || 'Unknown country';
-        document.getElementById('ip-location').textContent = `${ip} — ${city}, ${country}`;
+        const city = data.city;
+        const country = data.country_name;
+
+        const location = (city && country)
+          ? `${city}, ${country}`
+          : fallbackMsg;
+
+        document.getElementById('ip-location').textContent = `${ip} — ${location}`;
       } catch (error) {
-        document.getElementById('ip-location').textContent = 'Unable to fetch IP and location';
-        console.error('Error fetching IP/location:', error);
+        console.error('Failed to fetch IP/location:', error);
+        document.getElementById('ip-location').textContent = fallbackMsg;
       }
     }
 
