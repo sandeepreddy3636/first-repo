@@ -178,10 +178,21 @@ console.log('Week 12:', workoutData.week12 ? workoutData.week12.length + ' days'
 
 // State management
 let currentWeek = 1;
-let workoutProgress = loadProgress();
+let workoutProgress = {};
 
-// Initialize app
-document.addEventListener('DOMContentLoaded', () => {
+// Initialize app with authentication
+document.addEventListener('DOMContentLoaded', async () => {
+    // Require PIN authentication
+    const authenticated = await workoutAuth.verifyPin();
+    
+    if (!authenticated) {
+        document.body.innerHTML = '<div style="color: white; text-align: center; padding: 50px;"><h1>Authentication Failed</h1><p>Please refresh the page to try again.</p></div>';
+        return;
+    }
+    
+    // Load encrypted progress
+    workoutProgress = await loadProgress();
+    
     initializeApp();
     setupEventListeners();
     loadWeek(currentWeek);
@@ -228,6 +239,11 @@ function setupEventListeners() {
 
     // Export button
     document.getElementById('exportData').addEventListener('click', exportProgress);
+    
+    // Reset PIN button
+    document.getElementById('resetPin').addEventListener('click', () => {
+        workoutAuth.resetPin();
+    });
 }
 
 function switchWeek(week) {
@@ -391,12 +407,17 @@ function updateStats() {
 }
 
 function saveProgress() {
-    localStorage.setItem('workoutProgress', JSON.stringify(workoutProgress));
+    workoutAuth.encryptData(workoutProgress).then(encrypted => {
+        localStorage.setItem('workoutProgress_encrypted', encrypted);
+    });
 }
 
-function loadProgress() {
-    const saved = localStorage.getItem('workoutProgress');
-    return saved ? JSON.parse(saved) : {};
+async function loadProgress() {
+    const encrypted = localStorage.getItem('workoutProgress_encrypted');
+    if (!encrypted) return {};
+    
+    const decrypted = await workoutAuth.decryptData(encrypted);
+    return decrypted || {};
 }
 
 function resetAllProgress() {
