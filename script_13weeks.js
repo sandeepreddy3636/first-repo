@@ -194,15 +194,20 @@ function initializeApp() {
         workoutProgress = {};
     }
     
-    // Ensure all weeks 1-12 are initialized
+    // Ensure all weeks 1-12 are initialized (but don't overwrite existing data)
+    let needsSave = false;
     for (let i = 1; i <= 12; i++) {
         const weekKey = `week${i}`;
         if (!workoutProgress[weekKey]) {
             workoutProgress[weekKey] = [{}, {}, {}, {}, {}, {}];
+            needsSave = true;
         }
     }
     
-    saveProgress();
+    // Only save if we actually added new weeks
+    if (needsSave) {
+        saveProgress();
+    }
 }
 
 function setupEventListeners() {
