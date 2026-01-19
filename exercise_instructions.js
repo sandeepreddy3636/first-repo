@@ -2,7 +2,7 @@
 const exerciseInstructions = {
     // BARBELL EXERCISES
     'Barbell Squat': {
-        video: 'https://www.youtube.com/embed/gcNh17Ckjgg',
+        video: 'https://www.youtube.com/embed/ultWZbUMPL8',
         image: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Barbell-Squat.gif',
         steps: [
             'Stand with feet shoulder-width apart, barbell on upper traps',
@@ -15,7 +15,7 @@ const exerciseInstructions = {
         tips: 'Focus on depth and form over weight. Keep your core braced.'
     },
     'Barbell Deadlift': {
-        video: 'https://www.youtube.com/embed/rWkD73OiBdk',
+        video: 'https://www.youtube.com/embed/XxWcirHIwVo',
         image: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Barbell-Deadlift.gif',
         steps: [
             'Stand with feet hip-width apart, bar over mid-foot',
@@ -28,7 +28,7 @@ const exerciseInstructions = {
         tips: 'Keep the bar close to your body. Maintain neutral spine throughout.'
     },
     'Conventional Deadlift': {
-        video: 'https://www.youtube.com/embed/rWkD73OiBdk',
+        video: 'https://www.youtube.com/embed/XxWcirHIwVo',
         image: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Barbell-Deadlift.gif',
         steps: [
             'Stand with feet hip-width apart, bar over mid-foot',
@@ -41,7 +41,7 @@ const exerciseInstructions = {
         tips: 'Keep the bar close to your body. Maintain neutral spine throughout.'
     },
     'Barbell Bench Press - Flat': {
-        video: 'https://www.youtube.com/embed/XzGS7TOY3pU',
+        video: 'https://www.youtube.com/embed/gRVjAtPip0Y',
         image: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Barbell-Bench-Press.gif',
         steps: [
             'Lie on bench, feet flat on floor, eyes under bar',
