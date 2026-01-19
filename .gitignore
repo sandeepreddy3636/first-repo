@@ -1,0 +1,20 @@
+# Ignore Python virtual environment
+.venv/
+venv/
+__pycache__/
+
+# Ignore PDF source files
+*.pdf
+
+# Ignore extraction output files
+pdf_content.txt
+weeks_5_8_content.txt
+weeks_9_13_content.txt
+
+# Ignore Python scripts (not needed for deployment)
+extract_pdf.py
+extract_all_pdfs.py
+
+# System files
+.DS_Store
+Thumbs.db

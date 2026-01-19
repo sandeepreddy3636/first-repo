@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Workout Tracker - 12 Week Program</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💪 Workout Tracker</h1>
+            <p class="subtitle">6-Day Training Split • 12-Week Program</p>
+        </header>
+
+        <div class="progress-overview">
+            <div class="progress-card">
+                <h3>Current Week</h3>
+                <div id="currentWeek" class="stat-value">1</div>
+            </div>
+            <div class="progress-card">
+                <h3>Workouts Completed</h3>
+                <div id="completedWorkouts" class="stat-value">0</div>
+            </div>
+            <div class="progress-card">
+                <h3>Total Days</h3>
+                <div id="totalSessions" class="stat-value">0/72</div>
+            </div>
+            <div class="progress-card">
+                <h3>Completion Rate</h3>
+                <div id="completionRate" class="stat-value">0%</div>
+            </div>
+        </div>
+
+        <div class="week-selector">
+            <button class="week-btn active" data-week="1">Week 1</button>
+            <button class="week-btn" data-week="2">Week 2</button>
+            <button class="week-btn" data-week="3">Week 3</button>
+            <button class="week-btn" data-week="4">Week 4</button>
+            <button class="week-btn" data-week="5">Week 5</button>
+            <button class="week-btn" data-week="6">Week 6</button>
+            <button class="week-btn" data-week="7">Week 7</button>
+            <button class="week-btn" data-week="8">Week 8</button>
+            <button class="week-btn" data-week="9">Week 9</button>
+            <button class="week-btn" data-week="10">Week 10</button>
+            <button class="week-btn" data-week="11">Week 11</button>
+            <button class="week-btn" data-week="12">Week 12</button>
+        </div>
+
+        <div id="workoutContainer" class="workout-container">
+            <!-- Workouts will be dynamically loaded here -->
+        </div>
+
+        <div class="action-buttons">
+            <button id="resetProgress" class="btn btn-secondary">Reset All Progress</button>
+            <button id="exportData" class="btn btn-primary">Export Progress</button>
+        </div>
+    </div>
+
+    <!-- Exercise Instructions Modal -->
+    <div id="instructionsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeInstructions()">&times;</span>
+            <h2 id="exerciseName"></h2>
+            <div id="exerciseSteps"></div>
+            <div id="exerciseTips"></div>
+        </div>
+    </div>
+
+    <script src="exercise_instructions.js"></script>
+    <script src="script_13weeks.js"></script>
+</body>
+</html>

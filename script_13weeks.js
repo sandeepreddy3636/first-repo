@@ -1,0 +1,471 @@
+// Complete 12-week workout tracker for Sandeep's training plan
+// Weeks 1-4: 6-day split (Chart_09-Aug.pdf)
+// Weeks 5-8: PPL program (Sandeep_-_PPL_coolci.pdf)
+// Weeks 9-12: PPL program (Chart_05-Oct.pdf)
+
+const workoutData = {
+    // WEEKS 1-4: Original 6-day split
+    week1: [
+        {
+            day: 'Day 1',
+            title: 'Legs & Glutes',
+            exercises: [
+                { name: 'Barbell Squat', sets: 3, reps: '4', weight: 'Track weight', muscle: 'Glutes' },
+                { name: 'Barbell Stiff Leg Deadlift', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Hamstrings' },
+                { name: 'Bilateral Seated Leg Press', sets: 2, reps: '20', weight: 'Track weight', muscle: 'Hamstrings' },
+                { name: 'Leg Curl Machine', sets: 3, reps: '8', weight: 'Track weight', muscle: 'Hamstrings' },
+                { name: 'Seated Machine Calf Raises', sets: 4, reps: '6', weight: 'Track weight', muscle: 'Calves' },
+                { name: 'Cable Standing Twisting Crunch', sets: 3, reps: '30', weight: 'Track weight', muscle: 'Abs' }
+            ]
+        },
+        {
+            day: 'Day 2',
+            title: 'Chest, Back & Shoulders',
+            exercises: [
+                { name: 'Barbell Bench Press - Flat', sets: 3, reps: '6', weight: 'Track weight', muscle: 'Chest' },
+                { name: 'Cable Pulldown (Pro Lat Bar)', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Lats' },
+                { name: 'Dumbbell Incline Chest Press', sets: 3, reps: '8', weight: 'Track weight', muscle: 'Chest' },
+                { name: 'Barbell Bent Over Row (Close Grip)', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Lats' },
+                { name: 'Smith Machine Seated Overhead Press', sets: 2, reps: '12', weight: 'Track weight', muscle: 'Shoulders' },
+                { name: 'Dumbbell Front Lateral Raise', sets: 3, reps: '12', weight: 'Track weight', muscle: 'Shoulders' },
+                { name: 'Dumbbell Rear Delt Flyes', sets: 3, reps: '20, 18, 15', weight: 'Track weight', muscle: 'Shoulders' }
+            ]
+        },
+        {
+            day: 'Day 3',
+            title: 'Legs & Glutes Heavy',
+            exercises: [
+                { name: 'Barbell Deadlift', sets: 2, reps: '5', weight: 'Track weight', muscle: 'Hamstrings' },
+                { name: 'Barbell Squat', sets: 3, reps: '8', weight: 'Track weight', muscle: 'Glutes' },
+                { name: 'Hip Thrust', sets: 3, reps: '12', weight: 'Track weight', muscle: 'Glutes' },
+                { name: 'Lying Bilateral Leg Curls', sets: 3, reps: '20', weight: 'Track weight', muscle: 'Hamstrings' },
+                { name: 'Unilateral Leg Extensions', sets: 3, reps: '12', weight: 'Track weight', muscle: 'Quadriceps' },
+                { name: 'Seated Machine Calf Raises', sets: 3, reps: '20, 18, 12', weight: 'Track weight', muscle: 'Calves' }
+            ]
+        },
+        {
+            day: 'Day 4',
+            title: 'Upper Body Power',
+            exercises: [
+                { name: 'Barbell Shoulder Press', sets: 2, reps: '4', weight: 'Track weight', muscle: 'Shoulders' },
+                { name: 'Pull Ups', sets: 3, reps: '6', weight: 'Bodyweight', muscle: 'Lats' },
+                { name: 'Close Grip Bench Press', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Triceps' },
+                { name: 'Seated Cable Row', sets: 3, reps: '15', weight: 'Track weight', muscle: 'Lats' },
+                { name: 'Cable Standing Fly', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Chest' },
+                { name: 'Bench Supported Rows', sets: 2, reps: '20', weight: 'Track weight', muscle: 'Lats' },
+                { name: 'Dumbbell Bicep Curls', sets: 3, reps: '15', weight: 'Track weight', muscle: 'Biceps' },
+                { name: 'Dumbbell Lateral Raise', sets: 3, reps: '20, 18, 15', weight: 'Track weight', muscle: 'Shoulders' }
+            ]
+        },
+        {
+            day: 'Day 5',
+            title: 'Legs & Core',
+            exercises: [
+                { name: 'Barbell Squat', sets: 3, reps: '8', weight: 'Track weight', muscle: 'Glutes' },
+                { name: 'Dumbbell Walking Lunge', sets: 3, reps: '15', weight: 'Track weight', muscle: 'Glutes' },
+                { name: 'Leg Curl Machine', sets: 3, reps: '15', weight: 'Track weight', muscle: 'Hamstrings' },
+                { name: 'Cable Pull Through', sets: 3, reps: '15', weight: 'Track weight', muscle: 'Hamstrings' },
+                { name: 'Hip Abduction and Adduction', sets: 3, reps: '15', weight: 'Track weight', muscle: 'Quadriceps' },
+                { name: 'Dumbbell Crunches', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Abs' }
+            ]
+        },
+        {
+            day: 'Day 6',
+            title: 'Upper Body Hypertrophy',
+            exercises: [
+                { name: 'Incline Barbell Press', sets: 3, reps: '8', weight: 'Track weight', muscle: 'Chest' },
+                { name: 'Neutral Close Grip Pull Ups', sets: 3, reps: '10', weight: 'Bodyweight', muscle: 'Lats' },
+                { name: 'Bench Dip', sets: 3, reps: '10', weight: 'Bodyweight', muscle: 'Triceps' },
+                { name: 'Seated Cable Row', sets: 3, reps: '12', weight: 'Track weight', muscle: 'Lats' },
+                { name: 'Barbell Shoulder Press', sets: 3, reps: '12', weight: 'Track weight', muscle: 'Shoulders' },
+                { name: 'Skull Crusher', sets: 3, reps: '12', weight: 'Track weight', muscle: 'Triceps' },
+                { name: 'Dumbbell Rear Delt Flyes', sets: 3, reps: '20, 18, 15', weight: 'Track weight', muscle: 'Shoulders' }
+            ]
+        }
+    ],
+    
+    // WEEKS 5-13: PPL Program
+    week5: [
+        {
+            day: 'Day 1',
+            title: 'Pull Day',
+            exercises: [
+                { name: 'Conventional Deadlift', sets: 2, reps: '5', weight: 'Track weight', muscle: 'Hamstrings' },
+                { name: 'Lat Pulldown (Machine)', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Lats' },
+                { name: 'Seated Cable Row', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Lats' },
+                { name: 'Cable Face Pull', sets: 5, reps: '15', weight: 'Track weight', muscle: 'Shoulders' },
+                { name: 'Dumbbell Seated Hammer Curls (Alternating)', sets: 4, reps: '10', weight: 'Track weight', muscle: 'Biceps' },
+                { name: 'Dumbbell Bicep Curls', sets: 4, reps: '10', weight: 'Track weight', muscle: 'Biceps' }
+            ]
+        },
+        {
+            day: 'Day 2',
+            title: 'Push Day',
+            exercises: [
+                { name: 'Barbell Bench Press - Flat', sets: 4, reps: '5', weight: 'Track weight', muscle: 'Chest' },
+                { name: 'Overhead Military Press / DB Shoulder Press', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Delts' },
+                { name: 'Dumbbell Incline Chest Press', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Chest' },
+                { name: 'Cable Bar Pushdown', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Triceps' },
+                { name: 'Dumbbell Lateral Raise', sets: 3, reps: '15', weight: 'Track weight', muscle: 'Shoulders' },
+                { name: 'Dumbbell Overhead Tricep Extension (Seated)', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Triceps' },
+                { name: 'Band Lateral Raise', sets: 3, reps: '15', weight: 'Resistance Band', muscle: 'Shoulders' }
+            ]
+        },
+        {
+            day: 'Day 3',
+            title: 'Legs Day',
+            exercises: [
+                { name: 'Barbell Squat', sets: 3, reps: '5', weight: 'Track weight', muscle: 'Quadriceps' },
+                { name: 'The Romanian Deadlift', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Hamstrings' },
+                { name: 'Lying Leg Press', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Quadriceps' },
+                { name: 'Lying Bilateral Leg Curls', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Hamstrings' },
+                { name: 'Standing Machine Calf Raises', sets: 5, reps: '10', weight: 'Track weight', muscle: 'Calves' }
+            ]
+        },
+        {
+            day: 'Day 4',
+            title: 'Pull Day',
+            exercises: [
+                { name: 'Barbell Rowing', sets: 4, reps: '5', weight: 'Track weight', muscle: 'Lats' },
+                { name: 'Cable Pulldown (Lats)', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Lats' },
+                { name: 'Bench Supported Rows', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Full Body' },
+                { name: 'Cable Face Pull', sets: 5, reps: '15', weight: 'Track weight', muscle: 'Shoulders' },
+                { name: 'DB Standing Hammer Curls', sets: 4, reps: '10', weight: 'Track weight', muscle: 'Biceps' },
+                { name: 'Dumbbell Bicep Curl (Alternating)', sets: 4, reps: '10', weight: 'Track weight', muscle: 'Biceps' }
+            ]
+        },
+        {
+            day: 'Day 5',
+            title: 'Push Day',
+            exercises: [
+                { name: 'Overhead Military Press / DB Shoulder Press', sets: 4, reps: '5', weight: 'Track weight', muscle: 'Delts' },
+                { name: 'Barbell Bench Press - Flat', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Chest' },
+                { name: 'Dumbbell Incline Chest Press', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Chest' },
+                { name: 'Cable Bar Pushdown', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Triceps' },
+                { name: 'Dumbbell Overhead Tricep Extension (Seated)', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Triceps' },
+                { name: 'Dumbbell Lateral Raise', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Shoulders' }
+            ]
+        },
+        {
+            day: 'Day 6',
+            title: 'Legs Day',
+            exercises: [
+                { name: 'Barbell Squat', sets: 3, reps: '5', weight: 'Track weight', muscle: 'Quadriceps' },
+                { name: 'The Romanian Deadlift', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Hamstrings' },
+                { name: 'Lying Leg Press', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Quadriceps' },
+                { name: 'Lying Bilateral Leg Curls', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Hamstrings' },
+                { name: 'Seated Machine Calf Raises', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Calves' }
+            ]
+        }
+    ]
+};
+
+// Copy weeks 2-4 (same as week 1)
+workoutData.week2 = JSON.parse(JSON.stringify(workoutData.week1));
+workoutData.week3 = JSON.parse(JSON.stringify(workoutData.week1));
+workoutData.week4 = JSON.parse(JSON.stringify(workoutData.week1));
+
+// Copy weeks 6-12 (same PPL program as week 5)
+for (let i = 6; i <= 12; i++) {
+    workoutData[`week${i}`] = JSON.parse(JSON.stringify(workoutData.week5));
+}
+
+// Debug: Log workout data structure
+console.log('Workout Data Structure:');
+console.log('Week 1:', workoutData.week1 ? workoutData.week1.length + ' days' : 'MISSING');
+console.log('Week 5:', workoutData.week5 ? workoutData.week5.length + ' days' : 'MISSING');
+console.log('Week 12:', workoutData.week12 ? workoutData.week12.length + ' days' : 'MISSING');
+
+// State management
+let currentWeek = 1;
+let workoutProgress = loadProgress();
+
+// Initialize app
+document.addEventListener('DOMContentLoaded', () => {
+    initializeApp();
+    setupEventListeners();
+    loadWeek(currentWeek);
+    updateStats();
+});
+
+function initializeApp() {
+    // Initialize progress for all 12 weeks if empty or missing weeks
+    if (!workoutProgress) {
+        workoutProgress = {};
+    }
+    
+    // Ensure all weeks 1-12 are initialized
+    for (let i = 1; i <= 12; i++) {
+        const weekKey = `week${i}`;
+        if (!workoutProgress[weekKey]) {
+            workoutProgress[weekKey] = [{}, {}, {}, {}, {}, {}];
+        }
+    }
+    
+    saveProgress();
+}
+
+function setupEventListeners() {
+    // Week selector buttons
+    document.querySelectorAll('.week-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const week = parseInt(e.target.dataset.week);
+            switchWeek(week);
+        });
+    });
+
+    // Reset button
+    document.getElementById('resetProgress').addEventListener('click', () => {
+        if (confirm('Are you sure you want to reset all progress? This cannot be undone.')) {
+            resetAllProgress();
+        }
+    });
+
+    // Export button
+    document.getElementById('exportData').addEventListener('click', exportProgress);
+}
+
+function switchWeek(week) {
+    currentWeek = week;
+    
+    // Update active button
+    document.querySelectorAll('.week-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (parseInt(btn.dataset.week) === week) {
+            btn.classList.add('active');
+        }
+    });
+    
+    loadWeek(week);
+    updateStats();
+}
+
+function loadWeek(week) {
+    const weekKey = `week${week}`;
+    const workouts = workoutData[weekKey];
+    const container = document.getElementById('workoutContainer');
+    
+    console.log('Loading week:', week, 'Key:', weekKey);
+    console.log('Workouts found:', workouts ? workouts.length + ' days' : 'UNDEFINED');
+    
+    if (!workouts) {
+        container.innerHTML = '<div style="color: white; padding: 20px; text-align: center;"><h3>Error: Week ' + week + ' data not found!</h3><p>Please check the console for details.</p></div>';
+        console.error('Week data missing for:', weekKey);
+        return;
+    }
+    
+    container.innerHTML = '';
+    
+    workouts.forEach((workout, dayIndex) => {
+        const workoutCard = createWorkoutCard(workout, weekKey, dayIndex);
+        container.appendChild(workoutCard);
+    });
+}
+
+function createWorkoutCard(workout, weekKey, dayIndex) {
+    const card = document.createElement('div');
+    card.className = 'workout-day';
+    
+    const progress = workoutProgress[weekKey][dayIndex] || {};
+    const isCompleted = progress.completed || false;
+    
+    if (isCompleted) {
+        card.classList.add('completed');
+    }
+    
+    let exercisesHTML = workout.exercises.map((exercise, exerciseIndex) => {
+        const isDone = progress.exercises && progress.exercises[exerciseIndex];
+        const hasInstructions = exerciseInstructions[exercise.name];
+        return `
+            <div class="exercise-item ${isDone ? 'done' : ''}" data-exercise="${exerciseIndex}">
+                <div class="exercise-name">
+                    ${exercise.name}
+                    ${hasInstructions ? `<button class="info-btn" onclick="showInstructions('${exercise.name.replace(/'/g, "\\'")}')">ℹ️ How to</button>` : ''}
+                    <span class="muscle-tag">${exercise.muscle}</span>
+                </div>
+                <div class="exercise-details">
+                    <span>📊 ${exercise.sets} sets</span>
+                    <span>🔢 ${exercise.reps} reps</span>
+                    <span>⚖️ ${exercise.weight}</span>
+                </div>
+                <div class="done-checkbox">
+                    <input type="checkbox" ${isDone ? 'checked' : ''} 
+                           onchange="toggleExercise('${weekKey}', ${dayIndex}, ${exerciseIndex}, this.checked)">
+                    <label>Done</label>
+                </div>
+            </div>
+        `;
+    }).join('');
+    
+    card.innerHTML = `
+        <div class="workout-header">
+            <div>
+                <div class="workout-title">${workout.day} - ${workout.title}</div>
+                <div class="workout-date">Week ${currentWeek}</div>
+            </div>
+            <div class="complete-checkbox">
+                <input type="checkbox" ${isCompleted ? 'checked' : ''}
+                       onchange="toggleWorkoutComplete('${weekKey}', ${dayIndex}, this.checked)">
+                <label>Complete Workout</label>
+            </div>
+        </div>
+        <div class="exercises-list">
+            ${exercisesHTML}
+        </div>
+        <div class="notes-section">
+            <label><strong>Notes:</strong></label>
+            <textarea placeholder="Add notes about this workout..." 
+                      onchange="saveNotes('${weekKey}', ${dayIndex}, this.value)">${progress.notes || ''}</textarea>
+        </div>
+    `;
+    
+    return card;
+}
+
+function toggleExercise(weekKey, dayIndex, exerciseIndex, checked) {
+    if (!workoutProgress[weekKey][dayIndex].exercises) {
+        workoutProgress[weekKey][dayIndex].exercises = {};
+    }
+    
+    workoutProgress[weekKey][dayIndex].exercises[exerciseIndex] = checked;
+    saveProgress();
+    updateStats();
+    
+    // Visual feedback
+    const exerciseItem = document.querySelector(`[data-exercise="${exerciseIndex}"]`);
+    if (checked) {
+        exerciseItem.classList.add('done');
+    } else {
+        exerciseItem.classList.remove('done');
+    }
+}
+
+function toggleWorkoutComplete(weekKey, dayIndex, checked) {
+    workoutProgress[weekKey][dayIndex].completed = checked;
+    
+    // If marking as complete, mark all exercises as done
+    if (checked) {
+        const workout = workoutData[weekKey][dayIndex];
+        workoutProgress[weekKey][dayIndex].exercises = {};
+        workout.exercises.forEach((_, index) => {
+            workoutProgress[weekKey][dayIndex].exercises[index] = true;
+        });
+        workoutProgress[weekKey][dayIndex].completedDate = new Date().toISOString();
+    }
+    
+    saveProgress();
+    loadWeek(currentWeek);
+    updateStats();
+}
+
+function saveNotes(weekKey, dayIndex, notes) {
+    workoutProgress[weekKey][dayIndex].notes = notes;
+    saveProgress();
+}
+
+function updateStats() {
+    let totalCompleted = 0;
+    let totalWorkouts = 0;
+    
+    Object.keys(workoutData).forEach(weekKey => {
+        workoutData[weekKey].forEach((_, dayIndex) => {
+            totalWorkouts++;
+            if (workoutProgress[weekKey] && workoutProgress[weekKey][dayIndex] && 
+                workoutProgress[weekKey][dayIndex].completed) {
+                totalCompleted++;
+            }
+        });
+    });
+    
+    const completionRate = totalWorkouts > 0 ? Math.round((totalCompleted / totalWorkouts) * 100) : 0;
+    
+    document.getElementById('currentWeek').textContent = currentWeek;
+    document.getElementById('completedWorkouts').textContent = totalCompleted;
+    document.getElementById('totalSessions').textContent = `${totalCompleted}/${totalWorkouts}`;
+    document.getElementById('completionRate').textContent = `${completionRate}%`;
+}
+
+function saveProgress() {
+    localStorage.setItem('workoutProgress', JSON.stringify(workoutProgress));
+}
+
+function loadProgress() {
+    const saved = localStorage.getItem('workoutProgress');
+    return saved ? JSON.parse(saved) : {};
+}
+
+function resetAllProgress() {
+    workoutProgress = {};
+    for (let i = 1; i <= 12; i++) {
+        workoutProgress[`week${i}`] = [{}, {}, {}, {}, {}, {}];
+    }
+    saveProgress();
+    loadWeek(currentWeek);
+    updateStats();
+}
+
+function exportProgress() {
+    const dataStr = JSON.stringify(workoutProgress, null, 2);
+    const dataBlob = new Blob([dataStr], { type: 'application/json' });
+    const url = URL.createObjectURL(dataBlob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `workout-progress-${new Date().toISOString().split('T')[0]}.json`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+    
+    alert('Progress exported successfully!');
+}
+
+// Exercise instructions functions
+function showInstructions(exerciseName) {
+    const instructions = exerciseInstructions[exerciseName];
+    if (!instructions) {
+        alert('Instructions not available for this exercise.');
+        return;
+    }
+    
+    const modal = document.getElementById('instructionsModal');
+    const nameEl = document.getElementById('exerciseName');
+    const stepsEl = document.getElementById('exerciseSteps');
+    const tipsEl = document.getElementById('exerciseTips');
+    
+    nameEl.textContent = exerciseName;
+    
+    // Add video if available
+    let videoHTML = '';
+    if (instructions.video) {
+        const videoId = instructions.video.split('/embed/')[1]?.split('?')[0];
+        const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
+        videoHTML = `
+            <div class="video-section">
+                <a href="${youtubeUrl}" target="_blank" class="watch-youtube-btn">
+                    ▶️ Watch Tutorial on YouTube
+                </a>
+                <p class="video-note">Click the button above to watch the video tutorial</p>
+            </div>
+        `;
+    }
+    
+    stepsEl.innerHTML = videoHTML + '<h3>📋 How to perform:</h3><ol>' + 
+        instructions.steps.map(step => `<li>${step}</li>`).join('') + 
+        '</ol>';
+    
+    tipsEl.innerHTML = `<div class="tip-box"><strong>💡 Pro Tip:</strong> ${instructions.tips}</div>`;
+    
+    modal.style.display = 'block';
+}
+
+function closeInstructions() {
+    document.getElementById('instructionsModal').style.display = 'none';
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    const modal = document.getElementById('instructionsModal');
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+}

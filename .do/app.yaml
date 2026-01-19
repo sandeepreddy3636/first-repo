@@ -1,0 +1,12 @@
+name: workout-tracker
+static_sites:
+  - name: workout-tracker
+    git:
+      branch: main
+      repo_clone_url: YOUR_GITHUB_REPO_URL_HERE
+    source_dir: /
+    output_dir: /
+    index_document: index.html
+    error_document: index.html
+    routes:
+      - path: /
