@@ -182,33 +182,16 @@ let workoutProgress = {};
 
 // Initialize app with authentication
 document.addEventListener('DOMContentLoaded', async () => {
-    // Clear old unencrypted data
-    const oldData = localStorage.getItem('workoutProgress');
-    if (oldData) {
-        const migrate = confirm('🔐 PIN protection is now enabled. Would you like to migrate your existing data? (Click Cancel to start fresh)');
-        if (!migrate) {
-            localStorage.removeItem('workoutProgress');
-        }
-    }
-    
-    // Require PIN authentication
+    // Require hardcoded PIN authentication
     const authenticated = await workoutAuth.verifyPin();
     
     if (!authenticated) {
-        document.body.innerHTML = '<div style="color: white; text-align: center; padding: 50px;"><h1>Authentication Failed</h1><p>Please refresh the page to try again.</p></div>';
+        document.body.innerHTML = '<div style="color: white; text-align: center; padding: 50px;"><h1>❌ Access Denied</h1><p>Incorrect PIN. Please refresh the page to try again.</p></div>';
         return;
     }
     
-    // Migrate old data if exists
-    if (oldData && migrate) {
-        const oldProgress = JSON.parse(oldData);
-        workoutProgress = oldProgress;
-        await saveProgress(); // Save encrypted
-        localStorage.removeItem('workoutProgress'); // Remove old
-    } else {
-        // Load encrypted progress
-        workoutProgress = await loadProgress();
-    }
+    // Load progress (no encryption needed with shared PIN)
+    workoutProgress = loadProgress();
     
     initializeApp();
     setupEventListeners();
@@ -256,11 +239,6 @@ function setupEventListeners() {
 
     // Export button
     document.getElementById('exportData').addEventListener('click', exportProgress);
-    
-    // Reset PIN button
-    document.getElementById('resetPin').addEventListener('click', () => {
-        workoutAuth.resetPin();
-    });
 }
 
 function switchWeek(week) {
@@ -424,17 +402,12 @@ function updateStats() {
 }
 
 function saveProgress() {
-    workoutAuth.encryptData(workoutProgress).then(encrypted => {
-        localStorage.setItem('workoutProgress_encrypted', encrypted);
-    });
+    localStorage.setItem('workoutProgress', JSON.stringify(workoutProgress));
 }
 
-async function loadProgress() {
-    const encrypted = localStorage.getItem('workoutProgress_encrypted');
-    if (!encrypted) return {};
-    
-    const decrypted = await workoutAuth.decryptData(encrypted);
-    return decrypted || {};
+function loadProgress() {
+    const saved = localStorage.getItem('workoutProgress');
+    return saved ? JSON.parse(saved) : {};
 }
 
 function resetAllProgress() {
