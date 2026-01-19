@@ -444,12 +444,16 @@ function showInstructions(exerciseName) {
     if (instructions.video) {
         const videoId = instructions.video.split('/embed/')[1]?.split('?')[0];
         const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
+        const searchUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(exerciseName + ' tutorial')}`;
         videoHTML = `
             <div class="video-section">
                 <a href="${youtubeUrl}" target="_blank" class="watch-youtube-btn">
                     ▶️ Watch Tutorial on YouTube
                 </a>
-                <p class="video-note">Click the button above to watch the video tutorial</p>
+                <a href="${searchUrl}" target="_blank" class="watch-youtube-btn" style="background: #667eea; margin-left: 10px;">
+                    🔍 Search YouTube
+                </a>
+                <p class="video-note">If the video link doesn't work, use the search button to find tutorials</p>
             </div>
         `;
     }
