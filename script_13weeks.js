@@ -182,6 +182,15 @@ let workoutProgress = {};
 
 // Initialize app with authentication
 document.addEventListener('DOMContentLoaded', async () => {
+    // Clear old unencrypted data
+    const oldData = localStorage.getItem('workoutProgress');
+    if (oldData) {
+        const migrate = confirm('🔐 PIN protection is now enabled. Would you like to migrate your existing data? (Click Cancel to start fresh)');
+        if (!migrate) {
+            localStorage.removeItem('workoutProgress');
+        }
+    }
+    
     // Require PIN authentication
     const authenticated = await workoutAuth.verifyPin();
     
@@ -190,8 +199,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         return;
     }
     
-    // Load encrypted progress
-    workoutProgress = await loadProgress();
+    // Migrate old data if exists
+    if (oldData && migrate) {
+        const oldProgress = JSON.parse(oldData);
+        workoutProgress = oldProgress;
+        await saveProgress(); // Save encrypted
+        localStorage.removeItem('workoutProgress'); // Remove old
+    } else {
+        // Load encrypted progress
+        workoutProgress = await loadProgress();
+    }
     
     initializeApp();
     setupEventListeners();
