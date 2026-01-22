@@ -7,6 +7,22 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Authentication Modal -->
+    <div id="authModal" class="modal" style="display: flex;">
+        <div class="modal-content auth-modal-content">
+            <h2>🔒 Access Required</h2>
+            <p>Please enter your access PIN to continue.</p>
+            <div class="auth-input-container">
+                <input type="password" id="pinInput" placeholder="Enter 4-digit PIN" maxlength="4">
+                <div class="auth-buttons">
+                    <button id="submitPin" class="btn btn-primary">Unlock</button>
+                    <button id="cancelAuth" class="btn btn-secondary">Cancel</button>
+                </div>
+            </div>
+            <p id="authError" class="auth-error-msg">❌ Invalid PIN. Please try again.</p>
+        </div>
+    </div>
+
     <div class="container">
         <header>
             <h1>💪 Workout Tracker</h1>
@@ -69,6 +85,6 @@
 
     <script src="exercise_instructions.js"></script>
     <script src="auth.js"></script>
-    <script src="script_13weeks.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

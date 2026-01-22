@@ -161,13 +161,13 @@ const workoutData = {
 };
 
 // Copy weeks 2-4 (same as week 1)
-workoutData.week2 = JSON.parse(JSON.stringify(workoutData.week1));
-workoutData.week3 = JSON.parse(JSON.stringify(workoutData.week1));
-workoutData.week4 = JSON.parse(JSON.stringify(workoutData.week1));
+[2, 3, 4].forEach(i => {
+    workoutData[`week${i}`] = structuredClone(workoutData.week1);
+});
 
 // Copy weeks 6-12 (same PPL program as week 5)
 for (let i = 6; i <= 12; i++) {
-    workoutData[`week${i}`] = JSON.parse(JSON.stringify(workoutData.week5));
+    workoutData[`week${i}`] = structuredClone(workoutData.week5);
 }
 
 // Debug: Log workout data structure
@@ -186,7 +186,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     const authenticated = await workoutAuth.verifyPin();
     
     if (!authenticated) {
-        document.body.innerHTML = '<div style="color: white; text-align: center; padding: 50px;"><h1>❌ Access Denied</h1><p>Incorrect PIN. Please refresh the page to try again.</p></div>';
+        document.body.innerHTML = `
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; color: white; text-align: center; font-family: sans-serif;">
+                <div style="background: rgba(255,255,255,0.1); padding: 40px; border-radius: 15px; backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); max-width: 400px; width: 90%;">
+                    <h1 style="font-size: 3rem; margin-bottom: 20px;">❌</h1>
+                    <h2 style="margin-bottom: 15px;">Access Denied</h2>
+                    <p style="margin-bottom: 25px; opacity: 0.9;">Incorrect PIN. Access to the workout tracker is restricted.</p>
+                    <button onclick="location.reload()" class="btn btn-primary" style="width: 100%;">Try Again</button>
+                </div>
+            </div>
+        `;
         return;
     }
     
@@ -239,6 +248,14 @@ function setupEventListeners() {
 
     // Export button
     document.getElementById('exportData').addEventListener('click', exportProgress);
+
+    // Event delegation for instruction buttons
+    document.getElementById('workoutContainer').addEventListener('click', (e) => {
+        if (e.target.classList.contains('info-btn')) {
+            const exerciseName = e.target.dataset.exerciseName;
+            showInstructions(exerciseName);
+        }
+    });
 }
 
 function switchWeek(week) {
@@ -296,7 +313,7 @@ function createWorkoutCard(workout, weekKey, dayIndex) {
             <div class="exercise-item ${isDone ? 'done' : ''}" data-exercise="${exerciseIndex}">
                 <div class="exercise-name">
                     ${exercise.name}
-                    ${hasInstructions ? `<button class="info-btn" onclick="showInstructions('${exercise.name.replace(/'/g, "\\'")}')">ℹ️ How to</button>` : ''}
+                    ${hasInstructions ? `<button class="info-btn" data-exercise-name="${exercise.name}">ℹ️ How to</button>` : ''}
                     <span class="muscle-tag">${exercise.muscle}</span>
                 </div>
                 <div class="exercise-details">

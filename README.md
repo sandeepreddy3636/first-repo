@@ -56,7 +56,7 @@ A comprehensive web-based workout tracker for Sandeep's 12-week training program
 
 - `index.html` - Main application structure
 - `styles.css` - Styling and responsive design  
-- `script_13weeks.js` - Application logic with 12-week data
+- `script.js` - Application logic with 12-week data
 - `extract_pdf.py` - Python script for extracting workout data from PDFs
 - `extract_all_pdfs.py` - Batch extraction for multiple PDFs
 - `Chart_09-Aug.pdf` - Weeks 1-4 workout program

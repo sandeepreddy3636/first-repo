@@ -358,6 +358,47 @@ header h1 {
     animation: slideDown 0.3s;
 }
 
+.auth-modal-content {
+    max-width: 400px;
+    text-align: center;
+    margin-top: 15vh;
+}
+
+.auth-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.auth-buttons .btn {
+    flex: 1;
+}
+
+#pinInput {
+    padding: 15px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1.2rem;
+    text-align: center;
+    letter-spacing: 5px;
+    color: var(--text-dark);
+}
+
+.auth-error-msg {
+    color: #ff5252;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    display: none;
+}
+
 .video-section {
     margin: 20px 0;
 }
