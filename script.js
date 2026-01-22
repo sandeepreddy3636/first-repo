@@ -189,10 +189,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.body.innerHTML = `
             <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; color: white; text-align: center; font-family: sans-serif;">
                 <div style="background: rgba(255,255,255,0.1); padding: 40px; border-radius: 15px; backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); max-width: 400px; width: 90%;">
-                    <h1 style="font-size: 3rem; margin-bottom: 20px;">❌</h1>
-                    <h2 style="margin-bottom: 15px;">Access Denied</h2>
-                    <p style="margin-bottom: 25px; opacity: 0.9;">Incorrect PIN. Access to the workout tracker is restricted.</p>
-                    <button onclick="location.reload()" class="btn btn-primary" style="width: 100%;">Try Again</button>
+                    <h1 style="font-size: 3rem; margin-bottom: 20px;">🔒</h1>
+                    <h2 style="margin-bottom: 15px;">Access Required</h2>
+                    <p style="margin-bottom: 25px; opacity: 0.9;">A valid PIN is required to access your workout data.</p>
+                    <button onclick="location.reload()" class="btn btn-primary" style="width: 100%;">Unlock Tracker</button>
                 </div>
             </div>
         `;
