@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Workout Data</title>
+</head>
+<body>
+    <h1>Workout Data Test</h1>
+    <div id="output"></div>
+    
+    <script src="script_13weeks.js"></script>
+    <script>
+        const output = document.getElementById('output');
+        
+        // Check if workoutData is loaded
+        if (typeof workoutData !== 'undefined') {
+            output.innerHTML = '<h2>✅ workoutData loaded successfully!</h2>';
+            output.innerHTML += `<p>Week 1 has ${workoutData.week1.length} days</p>`;
+            output.innerHTML += `<p>Day 1 has ${workoutData.week1[0].exercises.length} exercises</p>`;
+            output.innerHTML += '<h3>Day 1 Exercises:</h3><ul>';
+            workoutData.week1[0].exercises.forEach(ex => {
+                output.innerHTML += `<li>${ex.name} - ${ex.sets} sets x ${ex.reps} reps</li>`;
+            });
+            output.innerHTML += '</ul>';
+        } else {
+            output.innerHTML = '<h2>❌ workoutData NOT loaded!</h2>';
+        }
+    </script>
+</body>
+</html>

@@ -1,4 +1,5 @@
 // Simple PIN-based authentication with hardcoded PIN
+// Version: 2.0 - Updated Jan 31, 2026
 class WorkoutAuth {
     constructor() {
         this.MASTER_PIN = '6548'; // Hardcoded PIN

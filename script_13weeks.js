@@ -118,29 +118,34 @@ const WORKOUT_VERSION = 'v2_tmpd_2026'; // Version identifier for new workout pl
 
 // Initialize app with authentication
 document.addEventListener('DOMContentLoaded', async () => {
-    // Require hardcoded PIN authentication
-    const authenticated = await workoutAuth.verifyPin();
-    
-    if (!authenticated) {
-        document.body.innerHTML = '<div style="color: white; text-align: center; padding: 50px;"><h1>❌ Access Denied</h1><p>Incorrect PIN. Please refresh the page to try again.</p></div>';
-        return;
+    try {
+        // Require hardcoded PIN authentication
+        const authenticated = await workoutAuth.verifyPin();
+        
+        if (!authenticated) {
+            document.body.innerHTML = '<div style="color: white; text-align: center; padding: 50px;"><h1>❌ Access Denied</h1><p>Incorrect PIN. Please refresh the page to try again.</p></div>';
+            return;
+        }
+        
+        // Check version and clear old data if needed
+        const storedVersion = localStorage.getItem('workoutVersion');
+        if (storedVersion !== WORKOUT_VERSION) {
+            console.log('New workout version detected, clearing old data...');
+            localStorage.removeItem('workoutProgress');
+            localStorage.setItem('workoutVersion', WORKOUT_VERSION);
+        }
+        
+        // Load progress (no encryption needed with shared PIN)
+        workoutProgress = loadProgress();
+        
+        initializeApp();
+        setupEventListeners();
+        loadWeek(currentWeek);
+        updateStats();
+    } catch (error) {
+        console.error('Initialization error:', error);
+        alert('Error loading workout tracker. Please refresh the page.');
     }
-    
-    // Check version and clear old data if needed
-    const storedVersion = localStorage.getItem('workoutVersion');
-    if (storedVersion !== WORKOUT_VERSION) {
-        console.log('New workout version detected, clearing old data...');
-        localStorage.removeItem('workoutProgress');
-        localStorage.setItem('workoutVersion', WORKOUT_VERSION);
-    }
-    
-    // Load progress (no encryption needed with shared PIN)
-    workoutProgress = loadProgress();
-    
-    initializeApp();
-    setupEventListeners();
-    loadWeek(currentWeek);
-    updateStats();
 });
 
 function initializeApp() {
