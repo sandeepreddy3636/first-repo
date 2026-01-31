@@ -225,6 +225,18 @@ const exerciseInstructions = {
         ],
         tips: 'Keep torso upright. Take controlled steps.'
     },
+    'Crunches': {
+        video: 'https://www.youtube.com/embed/Xyd_fa5zoEU',
+        steps: [
+            'Lie on back with knees bent, feet flat on floor',
+            'Place hands behind head or across chest',
+            'Curl shoulders off ground toward hips',
+            'Focus on contracting abs',
+            'Lower with control',
+            'Don\'t pull on neck'
+        ],
+        tips: 'Quality over quantity. Squeeze abs at top of movement.'
+    },
     'Dumbbell Crunches': {
         video: 'https://www.youtube.com/embed/Xyd_fa5zoEU',
         steps: [
@@ -236,6 +248,30 @@ const exerciseInstructions = {
             'Don\'t pull on neck'
         ],
         tips: 'Quality over quantity. Squeeze abs at top of movement.'
+    },
+    'Leg Raise': {
+        video: 'https://www.youtube.com/embed/JB2oyawG9KI',
+        steps: [
+            'Lie flat on back, hands under glutes for support',
+            'Keep legs straight or slightly bent',
+            'Raise legs up to 90 degrees',
+            'Control the lowering phase',
+            'Don\'t let feet touch ground between reps',
+            'Keep lower back pressed to floor'
+        ],
+        tips: 'Great for lower abs. Control is key - no swinging.'
+    },
+    'Plank': {
+        video: 'https://www.youtube.com/embed/ASdvN_XEl_c',
+        steps: [
+            'Start in forearm plank position',
+            'Keep body in straight line from head to heels',
+            'Engage core and glutes',
+            'Don\'t let hips sag or pike up',
+            'Hold for prescribed duration',
+            'Breathe steadily throughout'
+        ],
+        tips: 'Focus on form over duration. Keep core tight.'
     },
     'Dumbbell Lateral Raise': {
         video: 'https://www.youtube.com/embed/9gfirDFXBi8',
