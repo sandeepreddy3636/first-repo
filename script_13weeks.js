@@ -4,176 +4,105 @@
 // Weeks 9-12: PPL program (Chart_05-Oct.pdf)
 
 const workoutData = {
-    // WEEKS 1-4: Original 6-day split
+    // WEEKS 1-12: 6-day Push/Pull/Legs split (repeated twice per week)
     week1: [
         {
             day: 'Day 1',
-            title: 'Legs & Glutes',
+            title: 'Push Day (Chest, Triceps, Abs)',
             exercises: [
-                { name: 'Barbell Squat', sets: 3, reps: '4', weight: 'Track weight', muscle: 'Glutes' },
-                { name: 'Barbell Stiff Leg Deadlift', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Hamstrings' },
-                { name: 'Bilateral Seated Leg Press', sets: 2, reps: '20', weight: 'Track weight', muscle: 'Hamstrings' },
-                { name: 'Leg Curl Machine', sets: 3, reps: '8', weight: 'Track weight', muscle: 'Hamstrings' },
-                { name: 'Seated Machine Calf Raises', sets: 4, reps: '6', weight: 'Track weight', muscle: 'Calves' },
-                { name: 'Cable Standing Twisting Crunch', sets: 3, reps: '30', weight: 'Track weight', muscle: 'Abs' }
+                { name: 'Machine Chest Press', sets: 3, reps: '12, 10, 10', weight: 'Track weight', muscle: 'Chest' },
+                { name: 'Lever Pec Deck Fly', sets: 3, reps: '12, 12, 10', weight: 'Track weight', muscle: 'Chest' },
+                { name: 'Dumbbell Incline Chest Press', sets: 3, reps: '12, 10, 8', weight: 'Track weight', muscle: 'Chest' },
+                { name: 'Cable Bar Pushdown', sets: 3, reps: '12, 12, 12', weight: 'Track weight', muscle: 'Triceps' },
+                { name: 'Dumbbell Overhead Triceps Extension (Seated)', sets: 3, reps: '12, 12, 12', weight: 'Track weight', muscle: 'Triceps' },
+                { name: 'Bench Dip', sets: 3, reps: '12, 12, 12', weight: 'Bodyweight', muscle: 'Triceps' },
+                { name: 'Crunches', sets: 3, reps: '12, 12, 12', weight: 'Bodyweight', muscle: 'Abs' },
+                { name: 'Leg Raise', sets: 3, reps: '12, 12, 12', weight: 'Bodyweight', muscle: 'Abs' },
+                { name: 'Plank', sets: 2, reps: 'Hold', weight: 'Bodyweight', muscle: 'Abs' }
             ]
         },
         {
             day: 'Day 2',
-            title: 'Chest, Back & Shoulders',
+            title: 'Pull Day (Back, Biceps, Abs)',
             exercises: [
-                { name: 'Barbell Bench Press - Flat', sets: 3, reps: '6', weight: 'Track weight', muscle: 'Chest' },
-                { name: 'Cable Pulldown (Pro Lat Bar)', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Lats' },
-                { name: 'Dumbbell Incline Chest Press', sets: 3, reps: '8', weight: 'Track weight', muscle: 'Chest' },
-                { name: 'Barbell Bent Over Row (Close Grip)', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Lats' },
-                { name: 'Smith Machine Seated Overhead Press', sets: 2, reps: '12', weight: 'Track weight', muscle: 'Shoulders' },
-                { name: 'Dumbbell Front Lateral Raise', sets: 3, reps: '12', weight: 'Track weight', muscle: 'Shoulders' },
-                { name: 'Dumbbell Rear Delt Flyes', sets: 3, reps: '20, 18, 15', weight: 'Track weight', muscle: 'Shoulders' }
+                { name: 'Cable Pulldown (Pro Lat Bar)', sets: 3, reps: '12, 10, 8', weight: 'Track weight', muscle: 'Lats' },
+                { name: 'Low One Arm Standing Rows', sets: 3, reps: '10, 10, 10', weight: 'Track weight', muscle: 'Lats' },
+                { name: 'Seated Cable Row', sets: 3, reps: '12, 10, 8', weight: 'Track weight', muscle: 'Lats' },
+                { name: 'Cable Biceps Curl', sets: 3, reps: '12, 10, 8', weight: 'Track weight', muscle: 'Biceps' },
+                { name: 'Dumbbell Bicep Curl (Alternating)', sets: 3, reps: '12, 10, 8', weight: 'Track weight', muscle: 'Biceps' },
+                { name: 'Dumbbell Seated Hammer Curls', sets: 3, reps: '10, 10, 10', weight: 'Track weight', muscle: 'Biceps' },
+                { name: 'Side Oblique Crunches', sets: 3, reps: '12, 12, 12', weight: 'Bodyweight', muscle: 'Abs' },
+                { name: 'Plate Side Bends', sets: 3, reps: '12, 10, 8', weight: 'Track weight', muscle: 'Abs' },
+                { name: 'Side Plank', sets: 2, reps: 'Hold', weight: 'Bodyweight', muscle: 'Abs' }
             ]
         },
         {
             day: 'Day 3',
-            title: 'Legs & Glutes Heavy',
+            title: 'Leg Day (Quads, Hamstrings, Glutes, Shoulders, Calves)',
             exercises: [
-                { name: 'Barbell Deadlift', sets: 2, reps: '5', weight: 'Track weight', muscle: 'Hamstrings' },
-                { name: 'Barbell Squat', sets: 3, reps: '8', weight: 'Track weight', muscle: 'Glutes' },
-                { name: 'Hip Thrust', sets: 3, reps: '12', weight: 'Track weight', muscle: 'Glutes' },
-                { name: 'Lying Bilateral Leg Curls', sets: 3, reps: '20', weight: 'Track weight', muscle: 'Hamstrings' },
-                { name: 'Unilateral Leg Extensions', sets: 3, reps: '12', weight: 'Track weight', muscle: 'Quadriceps' },
-                { name: 'Seated Machine Calf Raises', sets: 3, reps: '20, 18, 12', weight: 'Track weight', muscle: 'Calves' }
+                { name: 'Bilateral Seated Leg Press', sets: 3, reps: '15, 12, 10', weight: 'Track weight', muscle: 'Hamstrings' },
+                { name: 'Bilateral Leg Extensions', sets: 3, reps: '15, 12, 10', weight: 'Track weight', muscle: 'Quadriceps' },
+                { name: 'Lying Bilateral Leg Curls', sets: 3, reps: '15, 12, 10', weight: 'Track weight', muscle: 'Hamstrings' },
+                { name: 'Dumbbell Glute Bridge', sets: 3, reps: 'Hold', weight: 'Track weight', muscle: 'Glutes' },
+                { name: 'Overhead Military Press / DB Shoulder Press', sets: 3, reps: '15, 12, 10', weight: 'Track weight', muscle: 'Shoulders' },
+                { name: 'Dumbbell Lateral Raise', sets: 3, reps: '12, 12, 12', weight: 'Track weight', muscle: 'Shoulders' },
+                { name: 'Standing Machine Calf Raises', sets: 3, reps: '15, 12, 10', weight: 'Track weight', muscle: 'Calves' }
             ]
         },
         {
             day: 'Day 4',
-            title: 'Upper Body Power',
+            title: 'Push Day (Chest, Triceps, Abs)',
             exercises: [
-                { name: 'Barbell Shoulder Press', sets: 2, reps: '4', weight: 'Track weight', muscle: 'Shoulders' },
-                { name: 'Pull Ups', sets: 3, reps: '6', weight: 'Bodyweight', muscle: 'Lats' },
-                { name: 'Close Grip Bench Press', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Triceps' },
-                { name: 'Seated Cable Row', sets: 3, reps: '15', weight: 'Track weight', muscle: 'Lats' },
-                { name: 'Cable Standing Fly', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Chest' },
-                { name: 'Bench Supported Rows', sets: 2, reps: '20', weight: 'Track weight', muscle: 'Lats' },
-                { name: 'Dumbbell Bicep Curls', sets: 3, reps: '15', weight: 'Track weight', muscle: 'Biceps' },
-                { name: 'Dumbbell Lateral Raise', sets: 3, reps: '20, 18, 15', weight: 'Track weight', muscle: 'Shoulders' }
+                { name: 'Machine Chest Press', sets: 3, reps: '12, 10, 8', weight: 'Track weight', muscle: 'Chest' },
+                { name: 'Lever Pec Deck Fly', sets: 3, reps: '12, 12, 12', weight: 'Track weight', muscle: 'Chest' },
+                { name: 'Dumbbell Incline Chest Press', sets: 3, reps: '12, 10, 8', weight: 'Track weight', muscle: 'Chest' },
+                { name: 'Cable Bar Pushdown', sets: 3, reps: '12, 12, 12', weight: 'Track weight', muscle: 'Triceps' },
+                { name: 'Dumbbell Overhead Triceps Extension (Seated)', sets: 3, reps: '12, 12, 12', weight: 'Track weight', muscle: 'Triceps' },
+                { name: 'Bench Dip', sets: 3, reps: '12, 12, 12', weight: 'Bodyweight', muscle: 'Triceps' },
+                { name: 'Crunches', sets: 3, reps: '12, 12, 12', weight: 'Bodyweight', muscle: 'Abs' },
+                { name: 'Leg Raise', sets: 3, reps: '12, 12, 12', weight: 'Bodyweight', muscle: 'Abs' },
+                { name: 'Plank', sets: 2, reps: 'Hold', weight: 'Bodyweight', muscle: 'Abs' }
             ]
         },
         {
             day: 'Day 5',
-            title: 'Legs & Core',
+            title: 'Pull Day (Back, Biceps, Abs)',
             exercises: [
-                { name: 'Barbell Squat', sets: 3, reps: '8', weight: 'Track weight', muscle: 'Glutes' },
-                { name: 'Dumbbell Walking Lunge', sets: 3, reps: '15', weight: 'Track weight', muscle: 'Glutes' },
-                { name: 'Leg Curl Machine', sets: 3, reps: '15', weight: 'Track weight', muscle: 'Hamstrings' },
-                { name: 'Cable Pull Through', sets: 3, reps: '15', weight: 'Track weight', muscle: 'Hamstrings' },
-                { name: 'Hip Abduction and Adduction', sets: 3, reps: '15', weight: 'Track weight', muscle: 'Quadriceps' },
-                { name: 'Dumbbell Crunches', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Abs' }
+                { name: 'Cable Pulldown (Pro Lat Bar)', sets: 3, reps: '12, 10, 8', weight: 'Track weight', muscle: 'Lats' },
+                { name: 'Low One Arm Standing Rows', sets: 3, reps: '10, 10, 10', weight: 'Track weight', muscle: 'Lats' },
+                { name: 'Seated Cable Row', sets: 3, reps: '12, 10, 8', weight: 'Track weight', muscle: 'Lats' },
+                { name: 'Cable Biceps Curl', sets: 3, reps: '12, 10, 8', weight: 'Track weight', muscle: 'Biceps' },
+                { name: 'Dumbbell Bicep Curl (Alternating)', sets: 3, reps: '12, 10, 8', weight: 'Track weight', muscle: 'Biceps' },
+                { name: 'Dumbbell Seated Hammer Curls', sets: 3, reps: '10, 10, 10', weight: 'Track weight', muscle: 'Biceps' },
+                { name: 'Side Oblique Crunches', sets: 3, reps: '12, 12, 12', weight: 'Bodyweight', muscle: 'Abs' },
+                { name: 'Plate Side Bends', sets: 3, reps: '12, 10, 8', weight: 'Track weight', muscle: 'Abs' },
+                { name: 'Side Plank', sets: 2, reps: 'Hold', weight: 'Bodyweight', muscle: 'Abs' }
             ]
         },
         {
             day: 'Day 6',
-            title: 'Upper Body Hypertrophy',
+            title: 'Leg Day (Quads, Hamstrings, Glutes, Shoulders, Calves)',
             exercises: [
-                { name: 'Incline Barbell Press', sets: 3, reps: '8', weight: 'Track weight', muscle: 'Chest' },
-                { name: 'Neutral Close Grip Pull Ups', sets: 3, reps: '10', weight: 'Bodyweight', muscle: 'Lats' },
-                { name: 'Bench Dip', sets: 3, reps: '10', weight: 'Bodyweight', muscle: 'Triceps' },
-                { name: 'Seated Cable Row', sets: 3, reps: '12', weight: 'Track weight', muscle: 'Lats' },
-                { name: 'Barbell Shoulder Press', sets: 3, reps: '12', weight: 'Track weight', muscle: 'Shoulders' },
-                { name: 'Skull Crusher', sets: 3, reps: '12', weight: 'Track weight', muscle: 'Triceps' },
-                { name: 'Dumbbell Rear Delt Flyes', sets: 3, reps: '20, 18, 15', weight: 'Track weight', muscle: 'Shoulders' }
+                { name: 'Bilateral Seated Leg Press', sets: 3, reps: '15, 12, 10', weight: 'Track weight', muscle: 'Hamstrings' },
+                { name: 'Bilateral Leg Extensions', sets: 3, reps: '15, 12, 10', weight: 'Track weight', muscle: 'Quadriceps' },
+                { name: 'Lying Bilateral Leg Curls', sets: 3, reps: '15, 12, 10', weight: 'Track weight', muscle: 'Hamstrings' },
+                { name: 'Dumbbell Glute Bridge', sets: 3, reps: 'Hold', weight: 'Track weight', muscle: 'Glutes' },
+                { name: 'Overhead Military Press / DB Shoulder Press', sets: 3, reps: '15, 12, 10', weight: 'Track weight', muscle: 'Shoulders' },
+                { name: 'Dumbbell Lateral Raise', sets: 3, reps: '12, 12, 12', weight: 'Track weight', muscle: 'Shoulders' },
+                { name: 'Standing Machine Calf Raises', sets: 3, reps: '15, 12, 10', weight: 'Track weight', muscle: 'Calves' }
             ]
         }
     ],
-    
-    // WEEKS 5-13: PPL Program
-    week5: [
-        {
-            day: 'Day 1',
-            title: 'Pull Day',
-            exercises: [
-                { name: 'Conventional Deadlift', sets: 2, reps: '5', weight: 'Track weight', muscle: 'Hamstrings' },
-                { name: 'Lat Pulldown (Machine)', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Lats' },
-                { name: 'Seated Cable Row', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Lats' },
-                { name: 'Cable Face Pull', sets: 5, reps: '15', weight: 'Track weight', muscle: 'Shoulders' },
-                { name: 'Dumbbell Seated Hammer Curls (Alternating)', sets: 4, reps: '10', weight: 'Track weight', muscle: 'Biceps' },
-                { name: 'Dumbbell Bicep Curls', sets: 4, reps: '10', weight: 'Track weight', muscle: 'Biceps' }
-            ]
-        },
-        {
-            day: 'Day 2',
-            title: 'Push Day',
-            exercises: [
-                { name: 'Barbell Bench Press - Flat', sets: 4, reps: '5', weight: 'Track weight', muscle: 'Chest' },
-                { name: 'Overhead Military Press / DB Shoulder Press', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Delts' },
-                { name: 'Dumbbell Incline Chest Press', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Chest' },
-                { name: 'Cable Bar Pushdown', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Triceps' },
-                { name: 'Dumbbell Lateral Raise', sets: 3, reps: '15', weight: 'Track weight', muscle: 'Shoulders' },
-                { name: 'Dumbbell Overhead Tricep Extension (Seated)', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Triceps' },
-                { name: 'Band Lateral Raise', sets: 3, reps: '15', weight: 'Resistance Band', muscle: 'Shoulders' }
-            ]
-        },
-        {
-            day: 'Day 3',
-            title: 'Legs Day',
-            exercises: [
-                { name: 'Barbell Squat', sets: 3, reps: '5', weight: 'Track weight', muscle: 'Quadriceps' },
-                { name: 'The Romanian Deadlift', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Hamstrings' },
-                { name: 'Lying Leg Press', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Quadriceps' },
-                { name: 'Lying Bilateral Leg Curls', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Hamstrings' },
-                { name: 'Standing Machine Calf Raises', sets: 5, reps: '10', weight: 'Track weight', muscle: 'Calves' }
-            ]
-        },
-        {
-            day: 'Day 4',
-            title: 'Pull Day',
-            exercises: [
-                { name: 'Barbell Rowing', sets: 4, reps: '5', weight: 'Track weight', muscle: 'Lats' },
-                { name: 'Cable Pulldown (Lats)', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Lats' },
-                { name: 'Bench Supported Rows', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Full Body' },
-                { name: 'Cable Face Pull', sets: 5, reps: '15', weight: 'Track weight', muscle: 'Shoulders' },
-                { name: 'DB Standing Hammer Curls', sets: 4, reps: '10', weight: 'Track weight', muscle: 'Biceps' },
-                { name: 'Dumbbell Bicep Curl (Alternating)', sets: 4, reps: '10', weight: 'Track weight', muscle: 'Biceps' }
-            ]
-        },
-        {
-            day: 'Day 5',
-            title: 'Push Day',
-            exercises: [
-                { name: 'Overhead Military Press / DB Shoulder Press', sets: 4, reps: '5', weight: 'Track weight', muscle: 'Delts' },
-                { name: 'Barbell Bench Press - Flat', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Chest' },
-                { name: 'Dumbbell Incline Chest Press', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Chest' },
-                { name: 'Cable Bar Pushdown', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Triceps' },
-                { name: 'Dumbbell Overhead Tricep Extension (Seated)', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Triceps' },
-                { name: 'Dumbbell Lateral Raise', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Shoulders' }
-            ]
-        },
-        {
-            day: 'Day 6',
-            title: 'Legs Day',
-            exercises: [
-                { name: 'Barbell Squat', sets: 3, reps: '5', weight: 'Track weight', muscle: 'Quadriceps' },
-                { name: 'The Romanian Deadlift', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Hamstrings' },
-                { name: 'Lying Leg Press', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Quadriceps' },
-                { name: 'Lying Bilateral Leg Curls', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Hamstrings' },
-                { name: 'Seated Machine Calf Raises', sets: 3, reps: '10', weight: 'Track weight', muscle: 'Calves' }
-            ]
-        }
-    ]
 };
 
-// Copy weeks 2-4 (same as week 1)
-workoutData.week2 = JSON.parse(JSON.stringify(workoutData.week1));
-workoutData.week3 = JSON.parse(JSON.stringify(workoutData.week1));
-workoutData.week4 = JSON.parse(JSON.stringify(workoutData.week1));
-
-// Copy weeks 6-12 (same PPL program as week 5)
-for (let i = 6; i <= 12; i++) {
-    workoutData[`week${i}`] = JSON.parse(JSON.stringify(workoutData.week5));
+// Copy weeks 2-12 (all use the same 6-day workout)
+for (let i = 2; i <= 12; i++) {
+    workoutData[`week${i}`] = JSON.parse(JSON.stringify(workoutData.week1));
 }
 
 // Debug: Log workout data structure
 console.log('Workout Data Structure:');
 console.log('Week 1:', workoutData.week1 ? workoutData.week1.length + ' days' : 'MISSING');
-console.log('Week 5:', workoutData.week5 ? workoutData.week5.length + ' days' : 'MISSING');
 console.log('Week 12:', workoutData.week12 ? workoutData.week12.length + ' days' : 'MISSING');
 
 // State management
