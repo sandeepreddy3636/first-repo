@@ -10,6 +10,7 @@ const workoutData = {
             day: 'Day 1',
             title: 'Push Day (Chest, Triceps, Abs)',
             exercises: [
+                { name: 'Warm Up', sets: 1, reps: 'Duration', weight: 'Bodyweight', muscle: 'Full Body' },
                 { name: 'Machine Chest Press', sets: 3, reps: '12, 10, 10', weight: 'Track weight', muscle: 'Chest' },
                 { name: 'Lever Pec Deck Fly', sets: 3, reps: '12, 12, 10', weight: 'Track weight', muscle: 'Chest' },
                 { name: 'Dumbbell Incline Chest Press', sets: 3, reps: '12, 10, 8', weight: 'Track weight', muscle: 'Chest' },
@@ -18,13 +19,14 @@ const workoutData = {
                 { name: 'Bench Dip', sets: 3, reps: '12, 12, 12', weight: 'Bodyweight', muscle: 'Triceps' },
                 { name: 'Crunches', sets: 3, reps: '12, 12, 12', weight: 'Bodyweight', muscle: 'Abs' },
                 { name: 'Leg Raise', sets: 3, reps: '12, 12, 12', weight: 'Bodyweight', muscle: 'Abs' },
-                { name: 'Plank', sets: 2, reps: 'Hold', weight: 'Bodyweight', muscle: 'Abs' }
+                { name: 'Plank', sets: 2, reps: 'Duration', weight: 'Bodyweight', muscle: 'Abs' }
             ]
         },
         {
             day: 'Day 2',
             title: 'Pull Day (Back, Biceps, Abs)',
             exercises: [
+                { name: 'Warm Up', sets: 1, reps: 'Duration', weight: 'Bodyweight', muscle: 'Full Body' },
                 { name: 'Cable Pulldown (Pro Lat Bar)', sets: 3, reps: '12, 10, 8', weight: 'Track weight', muscle: 'Lats' },
                 { name: 'Low One Arm Standing Rows', sets: 3, reps: '10, 10, 10', weight: 'Track weight', muscle: 'Lats' },
                 { name: 'Seated Cable Row', sets: 3, reps: '12, 10, 8', weight: 'Track weight', muscle: 'Lats' },
@@ -33,17 +35,18 @@ const workoutData = {
                 { name: 'Dumbbell Seated Hammer Curls', sets: 3, reps: '10, 10, 10', weight: 'Track weight', muscle: 'Biceps' },
                 { name: 'Side Oblique Crunches', sets: 3, reps: '12, 12, 12', weight: 'Bodyweight', muscle: 'Abs' },
                 { name: 'Plate Side Bends', sets: 3, reps: '12, 10, 8', weight: 'Track weight', muscle: 'Abs' },
-                { name: 'Side Plank', sets: 2, reps: 'Hold', weight: 'Bodyweight', muscle: 'Abs' }
+                { name: 'Side Plank', sets: 2, reps: 'Duration', weight: 'Bodyweight', muscle: 'Abs' }
             ]
         },
         {
             day: 'Day 3',
             title: 'Leg Day (Quads, Hamstrings, Glutes, Shoulders, Calves)',
             exercises: [
+                { name: 'Warm Up', sets: 1, reps: 'Duration', weight: 'Bodyweight', muscle: 'Full Body' },
                 { name: 'Bilateral Seated Leg Press', sets: 3, reps: '15, 12, 10', weight: 'Track weight', muscle: 'Hamstrings' },
                 { name: 'Bilateral Leg Extensions', sets: 3, reps: '15, 12, 10', weight: 'Track weight', muscle: 'Quadriceps' },
                 { name: 'Lying Bilateral Leg Curls', sets: 3, reps: '15, 12, 10', weight: 'Track weight', muscle: 'Hamstrings' },
-                { name: 'Dumbbell Glute Bridge', sets: 3, reps: 'Hold', weight: 'Track weight', muscle: 'Glutes' },
+                { name: 'Dumbbell Glute Bridge', sets: 3, reps: 'Duration', weight: 'Track weight', muscle: 'Glutes' },
                 { name: 'Overhead Military Press / DB Shoulder Press', sets: 3, reps: '15, 12, 10', weight: 'Track weight', muscle: 'Shoulders' },
                 { name: 'Dumbbell Lateral Raise', sets: 3, reps: '12, 12, 12', weight: 'Track weight', muscle: 'Shoulders' },
                 { name: 'Standing Machine Calf Raises', sets: 3, reps: '15, 12, 10', weight: 'Track weight', muscle: 'Calves' }
@@ -53,6 +56,7 @@ const workoutData = {
             day: 'Day 4',
             title: 'Push Day (Chest, Triceps, Abs)',
             exercises: [
+                { name: 'Warm Up', sets: 1, reps: 'Duration', weight: 'Bodyweight', muscle: 'Full Body' },
                 { name: 'Machine Chest Press', sets: 3, reps: '12, 10, 8', weight: 'Track weight', muscle: 'Chest' },
                 { name: 'Lever Pec Deck Fly', sets: 3, reps: '12, 12, 12', weight: 'Track weight', muscle: 'Chest' },
                 { name: 'Dumbbell Incline Chest Press', sets: 3, reps: '12, 10, 8', weight: 'Track weight', muscle: 'Chest' },
@@ -61,13 +65,14 @@ const workoutData = {
                 { name: 'Bench Dip', sets: 3, reps: '12, 12, 12', weight: 'Bodyweight', muscle: 'Triceps' },
                 { name: 'Crunches', sets: 3, reps: '12, 12, 12', weight: 'Bodyweight', muscle: 'Abs' },
                 { name: 'Leg Raise', sets: 3, reps: '12, 12, 12', weight: 'Bodyweight', muscle: 'Abs' },
-                { name: 'Plank', sets: 2, reps: 'Hold', weight: 'Bodyweight', muscle: 'Abs' }
+                { name: 'Plank', sets: 2, reps: 'Duration', weight: 'Bodyweight', muscle: 'Abs' }
             ]
         },
         {
             day: 'Day 5',
             title: 'Pull Day (Back, Biceps, Abs)',
             exercises: [
+                { name: 'Warm Up', sets: 1, reps: 'Duration', weight: 'Bodyweight', muscle: 'Full Body' },
                 { name: 'Cable Pulldown (Pro Lat Bar)', sets: 3, reps: '12, 10, 8', weight: 'Track weight', muscle: 'Lats' },
                 { name: 'Low One Arm Standing Rows', sets: 3, reps: '10, 10, 10', weight: 'Track weight', muscle: 'Lats' },
                 { name: 'Seated Cable Row', sets: 3, reps: '12, 10, 8', weight: 'Track weight', muscle: 'Lats' },
@@ -76,17 +81,18 @@ const workoutData = {
                 { name: 'Dumbbell Seated Hammer Curls', sets: 3, reps: '10, 10, 10', weight: 'Track weight', muscle: 'Biceps' },
                 { name: 'Side Oblique Crunches', sets: 3, reps: '12, 12, 12', weight: 'Bodyweight', muscle: 'Abs' },
                 { name: 'Plate Side Bends', sets: 3, reps: '12, 10, 8', weight: 'Track weight', muscle: 'Abs' },
-                { name: 'Side Plank', sets: 2, reps: 'Hold', weight: 'Bodyweight', muscle: 'Abs' }
+                { name: 'Side Plank', sets: 2, reps: 'Duration', weight: 'Bodyweight', muscle: 'Abs' }
             ]
         },
         {
             day: 'Day 6',
             title: 'Leg Day (Quads, Hamstrings, Glutes, Shoulders, Calves)',
             exercises: [
+                { name: 'Warm Up', sets: 1, reps: 'Duration', weight: 'Bodyweight', muscle: 'Full Body' },
                 { name: 'Bilateral Seated Leg Press', sets: 3, reps: '15, 12, 10', weight: 'Track weight', muscle: 'Hamstrings' },
                 { name: 'Bilateral Leg Extensions', sets: 3, reps: '15, 12, 10', weight: 'Track weight', muscle: 'Quadriceps' },
                 { name: 'Lying Bilateral Leg Curls', sets: 3, reps: '15, 12, 10', weight: 'Track weight', muscle: 'Hamstrings' },
-                { name: 'Dumbbell Glute Bridge', sets: 3, reps: 'Hold', weight: 'Track weight', muscle: 'Glutes' },
+                { name: 'Dumbbell Glute Bridge', sets: 3, reps: 'Duration', weight: 'Track weight', muscle: 'Glutes' },
                 { name: 'Overhead Military Press / DB Shoulder Press', sets: 3, reps: '15, 12, 10', weight: 'Track weight', muscle: 'Shoulders' },
                 { name: 'Dumbbell Lateral Raise', sets: 3, reps: '12, 12, 12', weight: 'Track weight', muscle: 'Shoulders' },
                 { name: 'Standing Machine Calf Raises', sets: 3, reps: '15, 12, 10', weight: 'Track weight', muscle: 'Calves' }

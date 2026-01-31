@@ -1,5 +1,19 @@
 // Exercise instructions database with video demonstrations
 const exerciseInstructions = {
+    // WARM UP
+    'Warm Up': {
+        video: 'https://www.youtube.com/embed/5Bf697FBJlo',
+        steps: [
+            'Start with 5-10 minutes of light cardio (treadmill, bike, or elliptical)',
+            'Perform dynamic stretches targeting major muscle groups',
+            'Do arm circles, leg swings, and torso rotations',
+            'Include mobility work for joints you\'ll be using',
+            'Gradually increase intensity to raise heart rate',
+            'Finish with specific warm-up sets for your first exercise'
+        ],
+        tips: 'Never skip your warm-up! It prevents injury and improves performance.'
+    },
+    
     // BARBELL EXERCISES
     'Barbell Squat': {
         video: 'https://www.youtube.com/embed/ultWZbUMPL8',
