@@ -1,38 +1,43 @@
 # Sandeep's Workout Tracker - 12-Week Training Program
 
-A comprehensive web-based workout tracker for Sandeep's 12-week training program, featuring a 6-day training split across three phases.
+A comprehensive web-based workout tracker for Sandeep's 12-week training program, featuring a 6-day Push/Pull/Legs split.
 
 ## 📋 Program Overview
 
 ### Program Structure:
-- **Weeks 1-4**: Original 6-Day Split (Chart_09-Aug.pdf)
-  - Day 1: Legs & Glutes
-  - Day 2: Chest, Back & Shoulders
-  - Day 3: Legs & Glutes Heavy
-  - Day 4: Upper Body Power
-  - Day 5: Legs & Core
-  - Day 6: Upper Body Hypertrophy
-
-- **Weeks 5-8**: Push/Pull/Legs (PPL) Program (Sandeep_-_PPL_coolci.pdf)
-  - Day 1: Pull (Deadlifts, Lat Pulldowns, Cable Rows, Face Pulls, Bicep Work)
-  - Day 2: Push (Bench Press, Overhead Press, Incline Press, Triceps, Shoulders)
-  - Day 3: Legs (Squats, Romanian Deadlifts, Leg Press, Leg Curls, Calves)
-  - Day 4: Pull (Barbell Rows, Pulldowns, Rows, Face Pulls, Curls)
-  - Day 5: Push (Military Press, Bench Press, Incline Press, Triceps, Lateral Raises)
-  - Day 6: Legs (Squats, RDLs, Leg Press, Leg Curls, Calf Raises)
-
-- **Weeks 9-12**: Push/Pull/Legs (PPL) Program (Chart_05-Oct.pdf)
-  - Same structure as weeks 5-8
+- **Weeks 1-12**: Push/Pull/Legs (PPL) 6-Day Split (Sandeep_-_Gym_6D_TMPD.pdf)
+  - **Day 1**: Push Day (Chest, Triceps, Abs)
+    - Machine Chest Press, Pec Deck Fly, Incline Press
+    - Cable Pushdowns, Overhead Extensions, Bench Dips
+    - Crunches, Leg Raises, Plank
+  
+  - **Day 2**: Pull Day (Back, Biceps, Abs)
+    - Lat Pulldowns, One-Arm Rows, Cable Rows
+    - Cable Curls, Dumbbell Curls, Hammer Curls
+    - Oblique Crunches, Plate Side Bends, Side Plank
+  
+  - **Day 3**: Leg Day (Quads, Hamstrings, Glutes, Shoulders, Calves)
+    - Leg Press, Leg Extensions, Leg Curls
+    - Glute Bridges
+    - Military Press, Lateral Raises
+    - Calf Raises
+  
+  - **Day 4**: Push Day (Repeat of Day 1 with slight variations)
+  - **Day 5**: Pull Day (Repeat of Day 2 with slight variations)
+  - **Day 6**: Leg Day (Repeat of Day 3 with slight variations)
 
 ### Total Program:
 - **Duration**: 12 weeks
 - **Training Days**: 72 total sessions (6 days per week)
 - **Rest Days**: 1 day per week (recommended Sunday)
+- **Workout Split**: Push/Pull/Legs repeated twice per week
 
 ## ✨ Features
 
-- ✅ **12-Week Progression**: Complete program with all phases
+- ✅ **12-Week Progression**: Complete program with consistent structure
 - ✅ **72 Workout Sessions**: Track every single workout
+- ✅ **Exercise Instructions**: Detailed how-to guides with YouTube video links for 60+ exercises
+- ✅ **PIN Protection**: Secure access with hardcoded PIN (6548)
 - ✅ **Exercise Tracking**: Check off individual exercises as you complete them
 - ✅ **Workout Notes**: Add notes for each workout session
 - ✅ **Progress Statistics**: View completion rates and total workouts done
@@ -40,14 +45,16 @@ A comprehensive web-based workout tracker for Sandeep's 12-week training program
 - ✅ **Export Function**: Download your progress as JSON
 - ✅ **Muscle Group Tags**: Visual indicators for targeted muscles
 - ✅ **Responsive Design**: Works on desktop, tablet, and mobile
-- ✅ **Phase Transitions**: Seamlessly move from 6-day split to PPL program
+- ✅ **Video Demonstrations**: YouTube links for proper exercise form
 
 ## 🚀 How to Use
 
-1. **Open the tracker**: Double-click `index.html` to open in your browser
-2. **Select your week**: Click on week buttons (1-12) to view that week's workouts
-3. **Track exercises**: Check off exercises as you complete them
-4. **Mark workouts complete**: Click "Complete Workout" when finished
+1. **Open the tracker**: Visit the deployed site or open `index.html`
+2. **Enter PIN**: Use PIN **6548** to access the tracker
+3. **Select your week**: Click on week buttons (1-12) to view that week's workouts
+4. **Track exercises**: Check off exercises as you complete them
+5. **View Instructions**: Click "ℹ️ How to" to see exercise demonstrations
+6. **Mark workouts complete**: Click "Complete Workout" when finished
 5. **Add notes**: Document weights, reps, or observations in the notes section
 6. **Monitor progress**: View your stats at the top of the page
 7. **Export data**: Save your progress by clicking "Export Progress"
