@@ -2,8 +2,8 @@ name: workout-tracker
 static_sites:
   - name: workout-tracker
     git:
-      branch: main
-      repo_clone_url: YOUR_GITHUB_REPO_URL_HERE
+      branch: master
+      repo_clone_url: https://github.com/sandeepreddy3636/first-repo
     source_dir: /
     output_dir: /
     index_document: index.html
