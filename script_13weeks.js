@@ -114,6 +114,7 @@ console.log('Week 12:', workoutData.week12 ? workoutData.week12.length + ' days'
 // State management
 let currentWeek = 1;
 let workoutProgress = {};
+const WORKOUT_VERSION = 'v2_tmpd_2026'; // Version identifier for new workout plan
 
 // Initialize app with authentication
 document.addEventListener('DOMContentLoaded', async () => {
@@ -123,6 +124,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!authenticated) {
         document.body.innerHTML = '<div style="color: white; text-align: center; padding: 50px;"><h1>❌ Access Denied</h1><p>Incorrect PIN. Please refresh the page to try again.</p></div>';
         return;
+    }
+    
+    // Check version and clear old data if needed
+    const storedVersion = localStorage.getItem('workoutVersion');
+    if (storedVersion !== WORKOUT_VERSION) {
+        console.log('New workout version detected, clearing old data...');
+        localStorage.removeItem('workoutProgress');
+        localStorage.setItem('workoutVersion', WORKOUT_VERSION);
     }
     
     // Load progress (no encryption needed with shared PIN)
