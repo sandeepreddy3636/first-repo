@@ -614,5 +614,127 @@ const exerciseInstructions = {
             'Focus on side delts'
         ],
         tips: 'Constant tension from bands. Great for high reps.'
+    },
+    
+    // NEW EXERCISES FROM TMPD PLAN
+    'Machine Chest Press': {
+        video: 'https://www.youtube.com/embed/xUm0BiZCWlQ',
+        steps: [
+            'Sit on machine with back flat against pad',
+            'Grip handles at chest level, elbows at 90 degrees',
+            'Press handles forward until arms are extended',
+            'Squeeze chest at full extension',
+            'Return with control to starting position',
+            'Keep core engaged and avoid arching back'
+        ],
+        tips: 'Safer than barbell bench for beginners. Focus on controlled movement.'
+    },
+    'Lever Pec Deck Fly': {
+        video: 'https://www.youtube.com/embed/Z71vO4dDTwA',
+        steps: [
+            'Sit with back against pad, feet flat on floor',
+            'Grab handles with arms extended to sides',
+            'Bring handles together in front of chest',
+            'Squeeze pecs at peak contraction',
+            'Slowly return to starting position',
+            'Maintain slight bend in elbows'
+        ],
+        tips: 'Great for chest isolation. Focus on the squeeze at the top.'
+    },
+    'Dumbbell Overhead Triceps Extension (Seated)': {
+        video: 'https://www.youtube.com/embed/YbX7Wd8jQ-Q',
+        steps: [
+            'Sit on bench with back support',
+            'Hold one dumbbell with both hands overhead',
+            'Lower dumbbell behind head by bending elbows',
+            'Keep upper arms stationary and vertical',
+            'Extend arms back to starting position',
+            'Control the weight throughout'
+        ],
+        tips: 'Targets the long head of triceps. Keep elbows close together.'
+    },
+    'Low One Arm Standing Rows': {
+        video: 'https://www.youtube.com/embed/dIajXdXH90w',
+        steps: [
+            'Stand facing cable machine with low pulley',
+            'Grab handle with one hand, step back',
+            'Pull handle to side of torso',
+            'Squeeze shoulder blade back',
+            'Control the return',
+            'Keep torso stable, slight forward lean'
+        ],
+        tips: 'Great for unilateral back development. Focus on squeezing the lat.'
+    },
+    'Cable Biceps Curl': {
+        video: 'https://www.youtube.com/embed/6uZfNHRyHbE',
+        steps: [
+            'Stand facing low cable pulley',
+            'Grab bar with underhand grip',
+            'Keep elbows at sides, curl bar upward',
+            'Squeeze biceps at top',
+            'Lower with control',
+            'Avoid swinging or using momentum'
+        ],
+        tips: 'Constant tension from cable. Keep elbows stationary.'
+    },
+    'Side Oblique Crunches': {
+        video: 'https://www.youtube.com/embed/DJQGX2J4IVw',
+        steps: [
+            'Lie on side with bottom arm extended for support',
+            'Place top hand behind head',
+            'Contract obliques to lift upper body',
+            'Focus on side crunch motion',
+            'Lower with control',
+            'Complete all reps before switching sides'
+        ],
+        tips: 'Great for targeting obliques. Quality over quantity.'
+    },
+    'Plate Side Bends': {
+        video: 'https://www.youtube.com/embed/dL9ZzqtQI5c',
+        steps: [
+            'Stand holding weight plate at side',
+            'Keep other hand behind head or at side',
+            'Bend laterally at waist toward weighted side',
+            'Return to upright position',
+            'Feel stretch in opposite oblique',
+            'Complete reps on one side before switching'
+        ],
+        tips: 'Avoid bending forward or backward. Pure lateral movement.'
+    },
+    'Side Plank': {
+        video: 'https://www.youtube.com/embed/K2VljzCC16g',
+        steps: [
+            'Lie on side, prop up on forearm',
+            'Stack feet or place top foot in front',
+            'Lift hips off ground to form straight line',
+            'Hold position with core engaged',
+            'Keep shoulders, hips, and ankles aligned',
+            'Breathe steadily throughout hold'
+        ],
+        tips: 'Great for oblique strength and stability. Keep hips elevated.'
+    },
+    'Bilateral Leg Extensions': {
+        video: 'https://www.youtube.com/embed/YyvSfEWR3B0',
+        steps: [
+            'Sit on machine with back against pad',
+            'Position legs under padded lever',
+            'Extend both legs until straight',
+            'Squeeze quads at top',
+            'Lower with control',
+            'Keep upper body stable'
+        ],
+        tips: 'Isolates quadriceps. Avoid locking knees forcefully.'
+    },
+    'Dumbbell Glute Bridge': {
+        video: 'https://www.youtube.com/embed/DjZFRshrMgA',
+        steps: [
+            'Lie on back with knees bent, feet flat',
+            'Place dumbbell on hips, hold with both hands',
+            'Drive through heels to lift hips',
+            'Squeeze glutes at top position',
+            'Hold briefly at peak contraction',
+            'Lower hips with control'
+        ],
+        tips: 'Great for glute activation. Focus on the squeeze at the top.'
     }
 };
