@@ -173,6 +173,18 @@ const exerciseInstructions = {
         ],
         tips: 'Keep elbows pinned. Focus on the squeeze at the top.'
     },
+    'Dumbbell Seated Hammer Curls': {
+        video: 'https://www.youtube.com/embed/zC3nLlEvin4',
+        steps: [
+            'Sit on bench with dumbbells at sides, palms facing each other',
+            'Curl both dumbbells up simultaneously',
+            'Keep elbows stationary, palms facing in throughout',
+            'Squeeze at top, then lower with control',
+            'No swinging or momentum',
+            'Keep wrists neutral throughout'
+        ],
+        tips: 'Hammer grip targets brachialis and forearms. Great for overall arm development.'
+    },
     'Dumbbell Seated Hammer Curls (Alternating)': {
         video: 'https://www.youtube.com/embed/zC3nLlEvin4',
         image: 'https://www.inspireusafoundation.org/wp-content/uploads/2022/01/dumbbell-hammer-curl.gif',
